@@ -4,6 +4,8 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install -r requirements-test.txt
-  - pip install coverage
+  - pip install coveralls
 script:
   - coverage run --source=ztreamy setup.py test
+after_sucess:
+  - coveralls
